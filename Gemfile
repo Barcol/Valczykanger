@@ -29,7 +29,11 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 # Fix CI
-gem 'rexml'
+gem "rexml"
+
+# Catch and report exceptions
+gem "sentry-ruby"
+gem "sentry-rails"
 
 group :development, :test do
   # Handy console debugger
