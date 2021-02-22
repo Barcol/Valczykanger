@@ -31,6 +31,15 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # Fix CI
 gem "rexml"
 
+# Popular authentication solution
+gem "devise"
+
+# Creating form without headache
+gem "simple_form"
+
+# Logging with external providers
+gem "omniauth"
+
 # Catch and report exceptions
 gem "sentry-ruby"
 gem "sentry-rails"

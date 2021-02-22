@@ -3,13 +3,20 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
+import "bootstrap"
+import "bootstrap/scss/bootstrap.scss"
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+import "controllers"
+import "startbootstrap-sb-admin-2/js/sb-admin-2.min"
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-import "controllers"
+var jQuery = require("jquery")
+
+global.$ = global.jQuery = jQuery;
+window.$ = window.jQuery = jQuery;
