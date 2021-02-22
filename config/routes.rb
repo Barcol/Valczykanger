@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  authenticated :user do
-    root to: "welcome#show"
-  end
+  devise_scope :user do
+    authenticated :user do
+      root to: "welcome#show", as: :authenticated_root
+    end
 
-  root to: redirect("/users/sign_in", status: 302), as: :unauthenticated_root
-  get "/booom", to: "welcome#new"
+    unauthenticated :user do
+      root to: "devise/sessions#new", as: :unauthenticated_root
+    end
+  end
 end
