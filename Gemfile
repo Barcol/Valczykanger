@@ -33,6 +33,7 @@ gem "rexml"
 
 # Popular authentication solution
 gem "devise"
+gem "devise-i18n"
 
 # Creating form without headache
 gem "simple_form"
