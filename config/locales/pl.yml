@@ -1,0 +1,12 @@
+pl:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: nie może być pusty.
+            password:
+              blank: nie może być puste.
+            password_confirmation:
+              confirmation: musi być zgodne z hasłem.

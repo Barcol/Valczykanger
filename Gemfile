@@ -49,6 +49,9 @@ group :development, :test do
   # Handy console debugger
   gem "pry-rails"
 
+  # Uncomment to find where is I18n looking for translations
+  # gem "i18n-debug"
+
   # RSpec main tests system
   gem "rspec-rails", "~> 4.0.0"
 
