@@ -6,14 +6,13 @@
 import "bootstrap"
 import "bootstrap/scss/bootstrap.scss"
 import Rails from "@rails/ujs"
-import Turbolinks from "turbolinks"
+import "@hotwired/turbo-rails"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "controllers"
 import "startbootstrap-sb-admin-2/js/sb-admin-2.min"
 
 Rails.start()
-Turbolinks.start()
 ActiveStorage.start()
 
 var jQuery = require("jquery")

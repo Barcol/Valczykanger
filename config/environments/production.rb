@@ -69,6 +69,16 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
 
+  # Use mailgun for mail delivery
+  config.action_mailer.delivery_method = :mailgun
+  config.action_mailer.mailgun_settings = {
+    api_key: ENV["MAILGUN_API_KEY"],
+    api_host: "api.eu.mailgun.net",
+    domain: "mg.bigaj.me",
+  }
+
+  config.action_mailer.default_url_options = { host: "valczykanger.bigaj.me", protocol: "https" }
+
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
