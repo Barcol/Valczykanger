@@ -6,7 +6,9 @@
       <div class="text-center">
         <h1 class="h4 text-gray-900 mb-4"><%= t(".resend_unlock_instructions") %></h1>
       </div>
-      <%= simple_form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+
+      <%= turbo_frame_tag resource do %>
+    <%= simple_form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
         <%= f.error_notification %>
         <%= f.full_error :unlock_token %>
 
@@ -20,6 +22,7 @@
         <div class="form-actions">
           <%= f.submit t(".resend_unlock_instructions"), class: "btn btn-primary btn-block" %>
         </div>
+      <% end %>
       <% end %>
 
       <hr>
