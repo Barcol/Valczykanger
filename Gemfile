@@ -47,6 +47,9 @@ gem "omniauth"
 gem "sentry-ruby"
 gem "sentry-rails"
 
+# Use mailgun for sending emails
+gem "mailgun-ruby"
+
 group :development, :test do
   # Handy console debugger
   gem "pry-rails"
