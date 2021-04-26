@@ -22,3 +22,11 @@
   background-size: cover;
   min-height: 573px;
 }
+
+.logout-button {
+  :hover {
+    background-color: #e74a3b;
+    background-image: linear-gradient(180deg, #e74a3b 10%, #be2617 100%);
+    background-size: cover
+  }
+}
