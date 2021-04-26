@@ -131,6 +131,8 @@ pl:
         many: "(minimum %{count} znaków)"
         one: "(minimum %{count} znak)"
         other: "(minimum %{count} znaków)"
+      language_picker:
+        pick_language: "Wybierz język:"
     unlocks:
       new:
         resend_unlock_instructions: Wyślij instrukcje odblokowania konta
