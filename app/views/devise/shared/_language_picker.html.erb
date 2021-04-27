@@ -1,8 +1,8 @@
-<div class="dropdown no-arrow">
+<div class="dropdown">
   <a class="dropdown-toggle float-right m-2" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     <%= params[:locale] ? params[:locale].upcase : "EN" %>
   </a>
-  <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink" style="">
+  <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
     <div class="dropdown-header"><%= t(".pick_language") %></div>
     <% I18n.available_locales.each do |locale| %>
       <%= link_to locale.upcase, url_for(locale: locale), class: "dropdown-item" %>

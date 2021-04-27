@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Valczykanger</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Valczykanger</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", media: "all", 'data-turbolinks-track': "reload" %>
-    <%= stylesheet_pack_tag "application", 'data-turbolinks-track': "reload" %>
-    <%= javascript_pack_tag "application", 'data-turbolinks-track': "reload" %>
-  </head>
+  <%= stylesheet_link_tag "application", media: "all", 'data-turbolinks-track': "reload" %>
+  <%= javascript_pack_tag "application", 'data-turbolinks-track': "reload" %>
+</head>
 
-  <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <%= yield %>
-  </body>
+<body>
+<div id="wrapper">
+  <%= render "shared/sidebar" %>
+  <div id="content-wrapper" class="d-flex flex-column">
+    <div id="content">
+      <%= render "shared/notice_bar" %>
+      <div class="container-fluid">
+        <%= yield %>
+      </div>
+    </div>
+
+    <footer class="sticky-footer bg-white">
+      <%= render "shared/footer" %>
+    </footer>
+  </div>
+</div>
+</body>
 </html>
