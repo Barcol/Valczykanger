@@ -7,7 +7,7 @@
         <h1 class="h4 text-gray-900 mb-4"><%= t(".resend_confirmation_instructions") %></h1>
       </div>
 
-      <%= turbo_frame_tag resource do %>
+      <%= turbo_frame_tag resource, data: { controller: "turbo-form-submit-redirect" } do %>
         <%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
           <%= f.error_notification %>
           <%= f.full_error :confirmation_token %>
