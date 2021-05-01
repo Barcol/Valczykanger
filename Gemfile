@@ -50,6 +50,9 @@ gem "sentry-rails"
 # Use mailgun for sending emails
 gem "mailgun-ruby"
 
+# Login with facebook
+gem "omniauth-facebook"
+
 group :development, :test do
   # Handy console debugger
   gem "pry-rails"
