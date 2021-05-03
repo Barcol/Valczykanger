@@ -292,6 +292,7 @@ Devise.setup do |config|
   config.omniauth :facebook,
                   Rails.application.credentials.facebook[:APP_ID],
                   Rails.application.credentials.facebook[:APP_SECRET],
+                  redirect_uri: Rails.application.credentials.facebook[:REDIRECT_URI],
                   token_params: { parse: :json }
 
   # ==> Warden configuration
