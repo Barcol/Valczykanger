@@ -17,6 +17,10 @@ class BaseDeviseController < ApplicationController
   respond_to :html, :turbo_stream
 
   before_action do
-    I18n.locale = params[:locale] || I18n.default_locale
+    cookies.permanent[:locale] = params[:locale] if params[:locale]
+    unless I18n.available_locales.include?(cookies.permanent[:locale]&.to_sym)
+      cookies.permanent[:locale] = I18n.default_locale
+    end
+    I18n.locale = cookies[:locale] || I18n.default_locale
   end
 end

@@ -1,6 +1,6 @@
 <div class="dropdown">
   <a class="dropdown-toggle float-right m-2" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <%= params[:locale] ? params[:locale].upcase : "EN" %>
+    <%= I18n.locale.upcase %>
   </a>
   <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
     <div class="dropdown-header"><%= t(".pick_language") %></div>
