@@ -19,7 +19,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     user = User.find_by(uid: data["user_id"])
     user.destroy!
 
-    data = { confirmation_code: "del_#{user.uid}" }
+    data = { url: "#{unauthenticated_root_url}delete_confirmation.html",
+             confirmation_code: "del_#{user.uid}" }
 
     respond_to do |format|
       format.json { render json: data }

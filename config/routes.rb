@@ -2,9 +2,6 @@ Rails.application.routes.draw do
   devise_for :users,
              only: :omniauth_callbacks,
              controllers: { omniauth_callbacks: "users/omniauth_callbacks"}
-  post "/users/auth/facebook/delete",
-       to: "users/omniauth_callbacks#facebook_user_deletion",
-       as: "user_facebook_omniauth_deletion_callback"
 
   scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
     devise_for :users,
@@ -13,6 +10,11 @@ Rails.application.routes.draw do
   end
 
   devise_scope :user do
+    match "/users/auth/facebook/delete",
+          to: "users/omniauth_callbacks#facebook_user_deletion",
+          as: "user_facebook_omniauth_deletion_callback",
+          via: [:get, :post]
+
     authenticated :user do
       root to: "dashboard#show", as: :authenticated_root
     end
