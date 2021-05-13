@@ -24,4 +24,6 @@ Rails.application.routes.draw do
       get "/:locale", locale: /#{I18n.available_locales.join("|")}/, to: "devise/sessions#new"
     end
   end
+
+  resources :melanges
 end

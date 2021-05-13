@@ -3,6 +3,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable,
          :lockable, :timeoutable, :trackable, :omniauthable, omniauth_providers: %i[facebook]
 
+  has_many :participants
+  has_many :melanges,  through: :participants
+
   def self.from_omniauth(auth)
     user = User.find_by(email: auth.info.email)
     unless user
