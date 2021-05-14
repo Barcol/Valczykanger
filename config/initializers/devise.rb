@@ -5,7 +5,11 @@ class TurboFailureApp < Devise::FailureApp
     if request_format == :turbo_stream
       redirect
     else
-      super
+      begin
+        super
+      rescue ActionController::ActionControllerError
+        redirect_to "/"
+      end
     end
   end
 

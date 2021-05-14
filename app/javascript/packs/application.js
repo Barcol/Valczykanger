@@ -11,6 +11,10 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "controllers"
 import "startbootstrap-sb-admin-2/js/sb-admin-2.min"
+import "./sweetalert";
+import "./flatpickr";
+import "@fortawesome/fontawesome-free/css/all";
+
 
 Rails.start()
 ActiveStorage.start()
@@ -21,5 +25,5 @@ global.$ = global.jQuery = jQuery;
 window.$ = window.jQuery = jQuery;
 
 $(document).on("turbo:load", () => {
-    $('[data-toggle="tooltip"]').tooltip()
+    $('[data-toggle="tooltip"]').tooltip();
 })

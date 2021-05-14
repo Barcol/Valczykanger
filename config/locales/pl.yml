@@ -1,5 +1,11 @@
 pl:
   activerecord:
+    model:
+      melange:
+        one: Wydarzenie
+        few: Wydarzenia
+        many: Wydarzeń
+        other: Wydarzenia
     errors:
       models:
         user:
@@ -10,3 +16,8 @@ pl:
               blank: nie może być puste.
             password_confirmation:
               confirmation: musi być zgodne z hasłem.
+
+  activeview:
+    melanges:
+      new: Utwórz wydarzenie
+      edit: Edytuj wydarzenie

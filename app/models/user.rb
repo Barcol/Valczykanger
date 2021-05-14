@@ -3,7 +3,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable,
          :lockable, :timeoutable, :trackable, :omniauthable, omniauth_providers: %i[facebook]
 
-  has_many :participants
+  has_many :participants, inverse_of: :user
   has_many :melanges,  through: :participants
 
   def self.from_omniauth(auth)

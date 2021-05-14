@@ -37,6 +37,9 @@ gem "rexml"
 gem "devise"
 gem "devise-i18n"
 
+# Authorize users permissions
+gem "cancancan"
+
 # Creating form without headache
 gem "simple_form"
 
