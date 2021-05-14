@@ -88,6 +88,9 @@ group :development do
 
   # Open mails locally
   gem "letter_opener"
+
+  # Debug translations (usually commented, to prevent terminal chaos)
+  # gem "i18n-debug"
 end
 
 group :test do

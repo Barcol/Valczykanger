@@ -20,3 +20,10 @@ en:
   activeview:
     melanges:
       new: Create event
+      create: Create event
+      edit: Edit event
+
+  controllers:
+    melanges:
+      create:
+        ok: Event was successfully created.

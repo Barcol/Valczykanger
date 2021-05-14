@@ -1,5 +1,9 @@
 pl:
   activerecord:
+    attributes:
+      melange:
+        name: Nazwa
+        event_date: Data wydarzenia
     model:
       melange:
         one: Wydarzenie
@@ -7,6 +11,8 @@ pl:
         many: Wydarzeń
         other: Wydarzenia
     errors:
+      messages:
+        blank: "- to pole nie może być puste."
       models:
         user:
           attributes:
@@ -20,4 +26,10 @@ pl:
   activeview:
     melanges:
       new: Utwórz wydarzenie
+      create: Utwórz wydarzenie
       edit: Edytuj wydarzenie
+
+  controllers:
+    melanges:
+      create:
+        ok: Wydarzenie utworzone poprawnie.
