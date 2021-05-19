@@ -14,7 +14,7 @@
       <div class="card-body">
         <div class="row">
           <div class="col-12">
-            <table class="table table-striped">
+            <table class="table table-striped table-responsive-sm">
               <thead>
               <tr>
                 <th><%= t "activerecord.attributes.melange.name" %></th>
@@ -30,7 +30,9 @@
                   <td><%= l(melange.event_date, format: :short) %></td>
                   <td><%= melange.participants.count %></td>
                   <td class="text-right">
-                    <button class="btn btn-sm btn-secondary dropdown-toggle" data-toggle="dropdown">Akcje</button>
+                    <button class="btn btn-sm btn-secondary dropdown-toggle" data-toggle="dropdown">
+                      <%= t "activeview.buttons.actions" %>
+                    </button>
                     <div class="dropdown-menu">
                       <%= link_to melange, class: "dropdown-item" do %>
                         <i class="fa fa-eye mr-5"></i>
@@ -41,7 +43,9 @@
                         <%= t "activeview.buttons.edit" %>
                       <% end %>
                       <% if can? :destroy, melange %>
-                        <%= link_to melange, method: :delete, class: "dropdown-item", data: { confirm_swal: "Czy jesteś pewien?" } do %>
+                        <%= link_to melange, method: :delete, class: "dropdown-item",
+                                    data: { confirm_swal: "Czy jesteś pewien?",
+                                            swal_text: "Ta akcja nie może zostać cofnięta." } do %>
                           <i class="fa fa-trash-alt mr-5"></i>
                           <%= t "activeview.buttons.delete" %>
                         <% end %>
