@@ -1,2 +1,47 @@
-<%= @melange.name %>
-<%= @melange.event_date %>
+<div class="d-sm-flex align-items-center justify-content-between m-4">
+  <h1 class="h3 mb-0 text-gray-800"><%= t("activerecord.model.melange.one") %></h1>
+</div>
+
+<div class="row text-center justify-content-center">
+  <div class="col-10">
+    <div class="card shadow mb-4">
+      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+        <h6 class="m-0 font-weight-bold">
+          Podstawowe dane
+        </h6>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-12">
+            <table class="table table-borderless table-striped">
+              <tbody>
+              <tr>
+                <th>Nazwa</th>
+                <td><%= @melange.name %></td>
+              </tr>
+
+              <tr>
+                <th>Data wydarzenia</th>
+                <td><%= l(@melange.event_date, format: :short) %></td>
+              </tr>
+
+              <tr>
+                <th>Liczba uczestników</th>
+                <td>
+                  <ul>
+                    <% @melange.participants.each do |participant| %>
+                      <li>
+                        <%= "#{participant.user.name} (#{participant.translated_role})" %>
+                      </li>
+                    <% end %>
+                  </ul>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

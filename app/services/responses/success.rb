@@ -11,4 +11,3 @@ module Responses
     end
   end
 end
-

@@ -4,6 +4,12 @@ pl:
       melange:
         name: Nazwa
         event_date: Data wydarzenia
+        participant_list: Lista uczestników
+      participant:
+        role_list:
+          organizer: Organizator
+          moderator: Pomocnik
+          guest: Gość
     model:
       melange:
         one: Wydarzenie
@@ -24,10 +30,17 @@ pl:
               confirmation: musi być zgodne z hasłem.
 
   activeview:
+    buttons:
+      actions: Akcje
+      show: Pokaż
+      edit: Edytuj
+      delete: Usuń
     melanges:
       new: Utwórz wydarzenie
       create: Utwórz wydarzenie
       edit: Edytuj wydarzenie
+      update: Edytuj wydarzenie
+      that_you_participate: w których bierzesz udział.
 
   controllers:
     melanges:

@@ -8,6 +8,7 @@
       <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
         <h6 class="m-0 font-weight-bold text-primary">
           <%= @melanges.count %> <%= t("activerecord.model.melange", count: @melanges.count) %>
+          <%= t("activeview.melanges.that_you_participate") %>
         </h6>
       </div>
       <div class="card-body">
@@ -16,9 +17,9 @@
             <table class="table table-striped">
               <thead>
               <tr>
-                <th>Nazwa</th>
-                <th>Data wydarzenia</th>
-                <th>Liczba uczestników</th>
+                <th><%= t "activerecord.attributes.melange.name" %></th>
+                <th><%= t "activerecord.attributes.melange.event_date" %></th>
+                <th><%= t "activerecord.attributes.melange.participant_list" %></th>
                 <th></th>
               </tr>
               </thead>
@@ -26,20 +27,23 @@
               <% @melanges.each do |melange| %>
                 <tr>
                   <td><%= melange.name %></td>
-                  <td><%= melange.event_date %></td>
+                  <td><%= l(melange.event_date, format: :short) %></td>
                   <td><%= melange.participants.count %></td>
                   <td class="text-right">
                     <button class="btn btn-sm btn-secondary dropdown-toggle" data-toggle="dropdown">Akcje</button>
                     <div class="dropdown-menu">
                       <%= link_to melange, class: "dropdown-item" do %>
-                        <i class="far fa-address-book mr-5"></i> Pokaż
+                        <i class="fa fa-eye mr-5"></i>
+                        <%= t "activeview.buttons.show" %>
                       <% end %>
                       <%= link_to edit_melange_path(melange), class: "dropdown-item" do %>
-                        <i class="fab fa-github mr-5"></i> Edytuj
+                        <i class="fa fa-pencil-alt mr-5"></i>
+                        <%= t "activeview.buttons.edit" %>
                       <% end %>
                       <% if can? :destroy, melange %>
                         <%= link_to melange, method: :delete, class: "dropdown-item", data: { confirm_swal: "Czy jesteś pewien?" } do %>
-                          <i class="fab fa-github mr-5"></i> Usuń
+                          <i class="fa fa-trash-alt mr-5"></i>
+                          <%= t "activeview.buttons.delete" %>
                         <% end %>
                       <% end %>
                     </div>

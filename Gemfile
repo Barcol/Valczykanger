@@ -37,6 +37,9 @@ gem "rexml"
 gem "devise"
 gem "devise-i18n"
 
+# Rails internalization
+gem "rails-i18n"
+
 # Authorize users permissions
 gem "cancancan"
 
@@ -45,6 +48,9 @@ gem "simple_form"
 
 # Logging with external providers
 gem "omniauth"
+
+# Handy enums translator
+gem "translate_enum"
 
 # Catch and report exceptions
 gem "sentry-ruby"
