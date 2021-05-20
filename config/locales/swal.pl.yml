@@ -1,0 +1,6 @@
+pl:
+  swal:
+    are_you_sure: Czy jesteś pewien?
+    this_cannot_be_undone: Ta akcja nie może zostać cofnięta.
+    "yes": Tak
+    "no": Nie

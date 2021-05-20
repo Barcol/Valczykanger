@@ -45,6 +45,7 @@ pl:
       create: Utwórz wydarzenie
       edit: Edytuj wydarzenie
       update: Edytuj wydarzenie
+      basic_data: Podstawowe dane
 
   controllers:
     melanges:

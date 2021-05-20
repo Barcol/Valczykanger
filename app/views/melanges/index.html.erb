@@ -51,8 +51,9 @@
 
                       <% if can? :destroy, melange %>
                         <%= link_to melange, method: :delete, class: "dropdown-item",
-                                    data: { confirm_swal: "Czy jesteś pewien?",
-                                            swal_text: "Ta akcja nie może zostać cofnięta." } do %>
+                                    data: { confirm_swal: t("swal.are_you_sure"),
+                                            swal_text: t("swal.this_cannot_be_undone"),
+                                            swal_yes: t("swal.yes"), swal_no: t("swal.no"), swal_icon: "error" } do %>
                           <i class="fa fa-trash-alt mr-5"></i>
                           <%= t "activeview.buttons.delete" %>
                         <% end %>

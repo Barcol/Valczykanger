@@ -7,8 +7,8 @@ class ApplicationController < ActionController::Base
   private
 
   def set_sentry_context
-      Sentry.set_user(id: current_user.id, email: current_user.email) if current_user
-      Sentry.set_extras(params: params.to_unsafe_h, url: request.url)
+    Sentry.set_user(id: current_user.id, email: current_user.email) if current_user
+    Sentry.set_extras(params: params.to_unsafe_h, url: request.url)
   end
 
   def set_language

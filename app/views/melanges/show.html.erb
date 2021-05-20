@@ -7,7 +7,7 @@
     <div class="card shadow mb-4">
       <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
         <h6 class="m-0 font-weight-bold">
-          Podstawowe dane
+          <%= t "activeview.melanges.basic_data" %>
         </h6>
         <h6 class="m-l-0">
           <% if can? :edit, @melange %>
@@ -18,8 +18,10 @@
           <% end %>
           <% if can? :destroy, @melange %>
             <%= link_to @melange, method: :delete, class: "btn btn-danger",
-                        data: { confirm_swal: "Czy jesteś pewien?",
-                                swal_text: "Ta akcja nie może zostać cofnięta." } do %>
+                        data: { confirm_swal: t("swal.are_you_sure"),
+                                swal_text: t("swal.this_cannot_be_undone"),
+                                swal_yes: t("swal.yes"), swal_no: t("swal.no"),
+                                swal_icon: "error"} do %>
               <i class="fa fa-trash-alt"></i>
               <%= t "activeview.buttons.delete" %>
             <% end %>
@@ -32,17 +34,17 @@
             <table class="table table-borderless table-striped">
               <tbody>
               <tr>
-                <th>Nazwa</th>
+                <th><%= t "activerecord.attributes.melange.name" %></th>
                 <td><%= @melange.name %></td>
               </tr>
 
               <tr>
-                <th>Data wydarzenia</th>
+                <th><%= t "activerecord.attributes.melange.event_date" %></th>
                 <td><%= l(@melange.event_date, format: :short) %></td>
               </tr>
 
               <tr>
-                <th>Liczba uczestników</th>
+                <th><%= t "activerecord.attributes.melange.participant_list" %></th>
                 <td>
                   <ul>
                     <% @melange.participants.each do |participant| %>
