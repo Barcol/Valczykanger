@@ -48,3 +48,7 @@ pl:
         ok: Wydarzenie utworzone poprawnie.
       destroy:
         ok: Wydarzenie zostało permanentnie usunięte.
+
+  helpers:
+    submit:
+      create: Utwórz

@@ -14,5 +14,13 @@ RSpec.describe Participant, type: :model do
         expect(Participant.count).to eq 0
       end
     end
+
+    context "when participant is created without role" do
+      it "by default gets a role of guest" do
+        participant = Participant.create!(melange: create(:melange), user: create(:user))
+
+        expect(participant.role).to eq "guest"
+      end
+    end
   end
 end
