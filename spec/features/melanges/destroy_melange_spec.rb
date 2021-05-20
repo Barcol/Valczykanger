@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.feature "CreateMelange", type: :feature do
+RSpec.feature "DestroyMelange", type: :feature do
   let(:user) { create(:user) }
 
   before do
@@ -19,4 +19,3 @@ RSpec.feature "CreateMelange", type: :feature do
     expect(page).to have_text "0 Wydarzeń w których bierzesz udział."
   end
 end
-

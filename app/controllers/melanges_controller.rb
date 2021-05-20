@@ -20,7 +20,7 @@ class MelangesController < ApplicationController
 
   def update
     if Melanges::UpdateMelange.call(@melange, melange_params)
-      redirect_to melange_path(@melange), notice: I18n.t("controllers.melanges.create.ok")
+      redirect_to melange_path(@melange), notice: I18n.t("controllers.melanges.update.ok")
     else
       render :edit, status: 422
     end

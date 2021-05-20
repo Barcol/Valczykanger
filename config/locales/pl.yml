@@ -51,6 +51,8 @@ pl:
     melanges:
       create:
         ok: Wydarzenie utworzone poprawnie.
+      update:
+        ok: Wydarzenie zaktualizowane poprawnie.
       destroy:
         ok: Wydarzenie zostało permanentnie usunięte.
 
