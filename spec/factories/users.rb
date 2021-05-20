@@ -6,9 +6,9 @@ FactoryBot.define do
     sequence :email do |n|
       "user-#{n}@example.com"
     end
-  end
 
-  before(:create) do |user|
-    user.skip_confirmation!
+    before(:create) do |user|
+      user.skip_confirmation!
+    end
   end
 end

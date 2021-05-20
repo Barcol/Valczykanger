@@ -8,9 +8,8 @@ class MelangesController < ApplicationController
   end
 
   def create
-    response = Melanges::CreateMelange.call(@melange, current_user)
-    if response.success?
-      redirect_to melange_path(response.response_object), notice: I18n.t("controllers.melanges.create.ok")
+    if Melanges::CreateMelange.call(@melange, current_user)
+      redirect_to melange_path(@melange), notice: I18n.t("controllers.melanges.create.ok")
     else
       render :new, status: 422
     end
@@ -20,9 +19,8 @@ class MelangesController < ApplicationController
   end
 
   def update
-    response = Melanges::UpdateMelange.call(@melange, melange_params)
-    if response.success?
-      redirect_to melange_path(response.response_object), notice: I18n.t("controllers.melanges.create.ok")
+    if Melanges::UpdateMelange.call(@melange, melange_params)
+      redirect_to melange_path(@melange), notice: I18n.t("controllers.melanges.create.ok")
     else
       render :edit, status: 422
     end

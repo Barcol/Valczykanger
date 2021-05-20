@@ -16,9 +16,9 @@ module Melanges
         @melange.assign_attributes(@melange_params)
         if @melange.valid?
           @melange.save!
-          Responses::Success.new(@melange)
+          true
         else
-          Responses::Failure.new(@melange)
+          false
         end
       end
     end

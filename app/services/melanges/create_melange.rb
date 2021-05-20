@@ -16,9 +16,9 @@ module Melanges
         if @melange.valid?
           @melange.save!
           Participant.create!(melange: @melange, user: @user, role: :organizer)
-          Responses::Success.new(@melange)
+          true
         else
-          Responses::Failure.new(@melange)
+          false
         end
       end
     end

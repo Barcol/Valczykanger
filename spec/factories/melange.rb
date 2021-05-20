@@ -9,7 +9,7 @@ FactoryBot.define do
       end
       after(:build) do |melange, evaluator|
         evaluator.number.times do
-          create(:participant, melange: melange, user: create(:user))
+          create(:participant_organizer, melange: melange, user: create(:user))
         end
       end
     end
