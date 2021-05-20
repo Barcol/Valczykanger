@@ -8,7 +8,10 @@
       <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
         <h6 class="m-0 font-weight-bold text-primary">
           <%= @melanges.count %> <%= t("activerecord.model.melange", count: @melanges.count) %>
-          <%= t("activeview.melanges.that_you_participate") %>
+          <%= t("activerecord.model.melange.that_you_participate", count: @melanges.count) %>
+        </h6>
+        <h6 class="m-l-5">
+          <%= link_to t("activeview.melanges.create"), new_melange_path, class: "btn btn-primary" %>
         </h6>
       </div>
       <div class="card-body">
@@ -38,10 +41,14 @@
                         <i class="fa fa-eye mr-5"></i>
                         <%= t "activeview.buttons.show" %>
                       <% end %>
-                      <%= link_to edit_melange_path(melange), class: "dropdown-item" do %>
-                        <i class="fa fa-pencil-alt mr-5"></i>
-                        <%= t "activeview.buttons.edit" %>
+
+                      <% if can? :edit, melange %>
+                        <%= link_to edit_melange_path(melange), class: "dropdown-item" do %>
+                          <i class="fa fa-pencil-alt mr-5"></i>
+                          <%= t "activeview.buttons.edit" %>
+                        <% end %>
                       <% end %>
+
                       <% if can? :destroy, melange %>
                         <%= link_to melange, method: :delete, class: "dropdown-item",
                                     data: { confirm_swal: "Czy jesteś pewien?",

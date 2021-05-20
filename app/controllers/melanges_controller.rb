@@ -28,7 +28,7 @@ class MelangesController < ApplicationController
 
   def destroy
     @melange.destroy!
-    redirect_to melanges_path, notice: I18n.t("controllers.melanges.create.ok")
+    redirect_to melanges_path, notice: I18n.t("controllers.melanges.destroy.ok")
   end
 
   def index

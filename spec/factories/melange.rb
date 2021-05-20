@@ -13,5 +13,14 @@ FactoryBot.define do
         end
       end
     end
+
+    trait :with_organizer do
+      transient do
+        organizer { create(:user) }
+      end
+      after(:build) do |melange, evaluator|
+        create(:participant_organizer, melange: melange, user: evaluator.organizer)
+      end
+    end
   end
 end

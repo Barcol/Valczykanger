@@ -16,6 +16,11 @@ pl:
         few: Wydarzenia
         many: Wydarzeń
         other: Wydarzenia
+        that_you_participate:
+          one: w którym bierzesz udział.
+          few: w których bierzesz udział.
+          many: w których bierzesz udział.
+          other: w których bierzesz udział.
     errors:
       messages:
         blank: "- to pole nie może być puste."
@@ -40,7 +45,6 @@ pl:
       create: Utwórz wydarzenie
       edit: Edytuj wydarzenie
       update: Edytuj wydarzenie
-      that_you_participate: w których bierzesz udział.
 
   controllers:
     melanges:
@@ -52,3 +56,4 @@ pl:
   helpers:
     submit:
       create: Utwórz
+      update: Zapisz
