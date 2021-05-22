@@ -1,6 +1,9 @@
 class MelangesController < ApplicationController
   load_and_authorize_resource
 
+  def index
+  end
+
   def show
   end
 
@@ -29,9 +32,6 @@ class MelangesController < ApplicationController
   def destroy
     @melange.destroy!
     redirect_to melanges_path, notice: I18n.t("controllers.melanges.destroy.ok")
-  end
-
-  def index
   end
 
   private
