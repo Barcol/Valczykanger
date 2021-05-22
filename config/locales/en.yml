@@ -1,12 +1,29 @@
 en:
   activerecord:
+    attributes:
+      melange:
+        name: Name
+        event_date: Event date
+        participant_list: Participant list
+      participant:
+        role_list:
+          organizer: Organizer
+          moderator: Moderator
+          guest: Guest
     model:
       melange:
         one: Event
         few: Events
         many: Events
         other: Events
+        that_you_participate:
+          one: that you participate in.
+          few: that you participate in.
+          many: that you participate in.
+          other: that you participate in.
     errors:
+      messages:
+        blank: "- this field cannot be left blank."
       models:
         user:
           attributes:
@@ -18,12 +35,31 @@ en:
               confirmation: has to match password.
 
   activeview:
+    buttons:
+      actions: Actions
+      show: Show
+      edit: Edit
+      delete: Delete
     melanges:
       new: Create event
       create: Create event
       edit: Edit event
+      update: Edit event
+      basic_data: Basic data
 
   controllers:
     melanges:
       create:
         ok: Event was successfully created.
+      update:
+        ok: Event was successfully updated.
+      destroy:
+        ok: Event was permanently deleted.
+
+  helpers:
+    submit:
+      create: Create
+      update: Save
+
+  unauthorized:
+    default: You are not authorized to access this page.

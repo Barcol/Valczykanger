@@ -20,7 +20,7 @@ RSpec.feature "Melange accessibility based on Participants", type: :feature do
 
     visit melange_path(melange)
 
-    expect(page).to have_text "You are not authorized"
+    expect(page).to have_text "Nie masz wystarczających uprawnień do podjęcia tej akcji."
   end
 
   scenario "User cannot edit or delete melange that he participates as guest" do
@@ -50,6 +50,6 @@ RSpec.feature "Melange accessibility based on Participants", type: :feature do
 
     visit edit_melange_path(melange)
 
-    expect(page).to have_text "Edytuj wydarzenie"
+    expect(page).to have_css 'input[value="Zapisz"]'
   end
 end

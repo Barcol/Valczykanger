@@ -14,7 +14,7 @@ gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 5.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-# 
+#
 # Use new hotwire stuff in place of turbolinks
 gem 'hotwire-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

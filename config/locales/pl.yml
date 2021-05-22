@@ -60,3 +60,6 @@ pl:
     submit:
       create: Utwórz
       update: Zapisz
+
+  unauthorized:
+    default: Nie masz wystarczających uprawnień do podjęcia tej akcji.
