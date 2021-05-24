@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2021_05_13_175654) do
   create_table "participants", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "melange_id", null: false
-    t.integer "role", default: 10, null: false
+    t.string "role", default: "guest", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["melange_id"], name: "index_participants_on_melange_id"
