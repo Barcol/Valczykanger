@@ -13,13 +13,9 @@ en:
     model:
       melange:
         one: Event
-        few: Events
-        many: Events
         other: Events
         that_you_participate:
           one: that you participate in.
-          few: that you participate in.
-          many: that you participate in.
           other: that you participate in.
     errors:
       messages:
