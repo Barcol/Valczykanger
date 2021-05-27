@@ -9,7 +9,9 @@ RSpec.describe ParseFacebookSignedRequest, type: :model do
         signed_request = "#{encoded_sig}.#{payload}"
         secret = Base64.urlsafe_encode64("123ImTotallySecretLikeASpy")
 
-        expect { ParseFacebookSignedRequest.call(signed_request, secret) }.to raise_exception
+        expect {
+          ParseFacebookSignedRequest.call(signed_request, secret)
+        }.to raise_exception ParseFacebookSignedRequest::WrongToken
       end
     end
   end

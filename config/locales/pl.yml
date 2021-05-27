@@ -1,6 +1,29 @@
 pl:
   activerecord:
+    attributes:
+      melange:
+        name: Nazwa
+        event_date: Data wydarzenia
+        participant_list: Lista uczestników
+      participant:
+        role_list:
+          organizer: Organizator
+          moderator: Pomocnik
+          guest: Gość
+    model:
+      melange:
+        one: Wydarzenie
+        few: Wydarzenia
+        many: Wydarzeń
+        other: Wydarzenia
+        that_you_participate:
+          one: w którym bierzesz udział.
+          few: w których bierzesz udział.
+          many: w których bierzesz udział.
+          other: w których bierzesz udział.
     errors:
+      messages:
+        blank: "- to pole nie może być puste."
       models:
         user:
           attributes:
@@ -10,3 +33,33 @@ pl:
               blank: nie może być puste.
             password_confirmation:
               confirmation: musi być zgodne z hasłem.
+
+  activeview:
+    buttons:
+      actions: Akcje
+      show: Pokaż
+      edit: Edytuj
+      delete: Usuń
+    melanges:
+      new: Utwórz wydarzenie
+      create: Utwórz wydarzenie
+      edit: Edytuj wydarzenie
+      update: Edytuj wydarzenie
+      basic_data: Podstawowe dane
+
+  controllers:
+    melanges:
+      create:
+        ok: Wydarzenie utworzone poprawnie.
+      update:
+        ok: Wydarzenie zaktualizowane poprawnie.
+      destroy:
+        ok: Wydarzenie zostało permanentnie usunięte.
+
+  helpers:
+    submit:
+      create: Utwórz
+      update: Zapisz
+
+  unauthorized:
+    default: Nie masz wystarczających uprawnień do podjęcia tej akcji.

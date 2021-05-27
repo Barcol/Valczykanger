@@ -1,0 +1,65 @@
+<div class="d-sm-flex align-items-center justify-content-between m-4">
+  <h1 class="h3 mb-0 text-gray-800"><%= t("activerecord.model.melange.one") %></h1>
+</div>
+
+<div class="row text-center justify-content-center">
+  <div class="col-10">
+    <div class="card shadow mb-4">
+      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+        <h6 class="m-0 font-weight-bold">
+          <%= t "activeview.melanges.basic_data" %>
+        </h6>
+        <h6 class="m-l-0">
+          <% if can? :edit, @melange %>
+            <%= link_to edit_melange_path(@melange), class: "btn btn-warning" do %>
+              <i class="fa fa-pencil-alt"></i>
+              <%= t "activeview.buttons.edit" %>
+            <% end %>
+          <% end %>
+          <% if can? :destroy, @melange %>
+            <%= link_to @melange, method: :delete, class: "btn btn-danger",
+                        data: { confirm_swal: t("swal.are_you_sure"),
+                                swal_text: t("swal.this_cannot_be_undone"),
+                                swal_yes: t("swal.yes"), swal_no: t("swal.no"),
+                                swal_icon: "error"} do %>
+              <i class="fa fa-trash-alt"></i>
+              <%= t "activeview.buttons.delete" %>
+            <% end %>
+          <% end %>
+        </h6>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-12">
+            <table class="table table-borderless table-striped">
+              <tbody>
+              <tr>
+                <th><%= t "activerecord.attributes.melange.name" %></th>
+                <td><%= @melange.name %></td>
+              </tr>
+
+              <tr>
+                <th><%= t "activerecord.attributes.melange.event_date" %></th>
+                <td><%= l(@melange.event_date, format: :short) %></td>
+              </tr>
+
+              <tr>
+                <th><%= t "activerecord.attributes.melange.participant_list" %></th>
+                <td>
+                  <ul>
+                    <% @melange.participants.each do |participant| %>
+                      <li>
+                        <%= "#{participant.user.name} (#{participant.translated_role})" %>
+                      </li>
+                    <% end %>
+                  </ul>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

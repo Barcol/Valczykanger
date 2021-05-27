@@ -12,6 +12,7 @@
  *
  *= require "bootstrap/scss/bootstrap"
  *= require "startbootstrap-sb-admin-2/scss/sb-admin-2"
+ *= require "flatpickr/dist/flatpickr.css"
  *= require_tree .
  *= require_self
  */
@@ -34,4 +35,8 @@
 .btn-facebook{
   background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_facebook.png') 6px 6px no-repeat;
   background-color: #3b5998 !important;
+}
+
+.date-field {
+  background-color: #fff !important;
 }

@@ -37,3 +37,6 @@ yarn-debug.log*
 
 # JetBrains stuff
 /.idea
+
+# Slow tests examples
+/spec/examples.txt

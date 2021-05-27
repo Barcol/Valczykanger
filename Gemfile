@@ -14,7 +14,7 @@ gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 5.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-# 
+#
 # Use new hotwire stuff in place of turbolinks
 gem 'hotwire-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -37,11 +37,20 @@ gem "rexml"
 gem "devise"
 gem "devise-i18n"
 
+# Rails internalization
+gem "rails-i18n"
+
+# Authorize users permissions
+gem "cancancan"
+
 # Creating form without headache
 gem "simple_form"
 
 # Logging with external providers
 gem "omniauth"
+
+# Handy enums translator
+gem "translate_enum"
 
 # Catch and report exceptions
 gem "sentry-ruby"
@@ -85,6 +94,9 @@ group :development do
 
   # Open mails locally
   gem "letter_opener"
+
+  # Debug translations (usually commented, to prevent terminal chaos)
+  # gem "i18n-debug"
 end
 
 group :test do
@@ -93,6 +105,9 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+
+  # Simple one line tests
+  gem "shoulda-matchers", "~> 4.0"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

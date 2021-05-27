@@ -1,0 +1,39 @@
+<div class="d-sm-flex align-items-center justify-content-between m-4">
+  <h1 class="h3 mb-0 text-gray-800"><%= t("activerecord.model.melange.one") %></h1>
+</div>
+
+<%= simple_form_for @melange do |form| %>
+  <%= form.error_notification %>
+  <%= form.error_notification message: form.object.errors[:base].to_sentence if form.object.errors[:base].present? %>
+
+  <div class="row text-center justify-content-center">
+    <div class="col-10">
+      <div class="card shadow mb-4">
+        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+          <h6 class="m-0 font-weight-bold"><%= t("activeview.melanges.#{action_name}") %></h6>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-3">
+              <p>Podstawowe dane wydarzenia</p>
+            </div>
+            <div class="col-9">
+              <div class="col-6">
+                <%= form.input :name %>
+                <%= form.input :event_date,
+                               as: :string,
+                               input_html: { data: { behaviour: "flatpickr" },
+                                             class: "date-field" } %>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <%= form.submit class: "btn btn-primary" %>
+        <%= link_to "Wróć", :back, class: "btn btn-secondary" %>
+      </div>
+    </div>
+  </div>
+<% end %>

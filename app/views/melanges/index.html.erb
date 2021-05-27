@@ -1,0 +1,72 @@
+<div class="d-sm-flex align-items-center justify-content-between m-4">
+  <h1 class="h3 mb-0 text-gray-800"><%= t("activerecord.model.melange.few") %></h1>
+</div>
+
+<div class="row text-center justify-content-center">
+  <div class="col-10">
+    <div class="card shadow mb-4">
+      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+        <h6 class="m-0 font-weight-bold text-primary">
+          <%= @melanges.count %> <%= t("activerecord.model.melange", count: @melanges.count) %>
+          <%= t("activerecord.model.melange.that_you_participate", count: @melanges.count) %>
+        </h6>
+        <h6 class="m-l-5">
+          <%= link_to t("activeview.melanges.create"), new_melange_path, class: "btn btn-primary" %>
+        </h6>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-12">
+            <table class="table table-striped table-responsive-sm">
+              <thead>
+              <tr>
+                <th><%= t "activerecord.attributes.melange.name" %></th>
+                <th><%= t "activerecord.attributes.melange.event_date" %></th>
+                <th><%= t "activerecord.attributes.melange.participant_list" %></th>
+                <th></th>
+              </tr>
+              </thead>
+              <tbody>
+              <% @melanges.each do |melange| %>
+                <tr>
+                  <td><%= melange.name %></td>
+                  <td><%= l(melange.event_date, format: :short) %></td>
+                  <td><%= melange.participants.count %></td>
+                  <td class="text-right">
+                    <button class="btn btn-sm btn-secondary dropdown-toggle" data-toggle="dropdown">
+                      <%= t "activeview.buttons.actions" %>
+                    </button>
+                    <div class="dropdown-menu">
+                      <%= link_to melange, class: "dropdown-item" do %>
+                        <i class="fa fa-eye mr-5"></i>
+                        <%= t "activeview.buttons.show" %>
+                      <% end %>
+
+                      <% if can? :edit, melange %>
+                        <%= link_to edit_melange_path(melange), class: "dropdown-item" do %>
+                          <i class="fa fa-pencil-alt mr-5"></i>
+                          <%= t "activeview.buttons.edit" %>
+                        <% end %>
+                      <% end %>
+
+                      <% if can? :destroy, melange %>
+                        <%= link_to melange, method: :delete, class: "dropdown-item",
+                                    data: { confirm_swal: t("swal.are_you_sure"),
+                                            swal_text: t("swal.this_cannot_be_undone"),
+                                            swal_yes: t("swal.yes"), swal_no: t("swal.no"), swal_icon: "error" } do %>
+                          <i class="fa fa-trash-alt mr-5"></i>
+                          <%= t "activeview.buttons.delete" %>
+                        <% end %>
+                      <% end %>
+                    </div>
+                  </td>
+                </tr>
+              <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
