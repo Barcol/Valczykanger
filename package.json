@@ -29,8 +29,7 @@
     "rubySingleQuote": false
   },
   "lint-staged": {
-    "*.rb": "./node_modules/.bin/prettier --write",
-    "*.{js,css,md}": "prettier --write"
+    "*.{js,css,md,rb}": "prettier --write"
   },
   "scripts": {
     "prepare": "husky install"

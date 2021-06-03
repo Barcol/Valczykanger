@@ -15,7 +15,6 @@ import "./sweetalert";
 import "./flatpickr";
 import "@fortawesome/fontawesome-free/css/all";
 
-
 Rails.start();
 ActiveStorage.start();
 
@@ -25,5 +24,5 @@ global.$ = global.jQuery = jQuery;
 window.$ = window.jQuery = jQuery;
 
 $(document).on("turbo:load", () => {
-    $('[data-toggle="tooltip"]').tooltip();
-})
+  $('[data-toggle="tooltip"]').tooltip();
+});
