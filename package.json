@@ -19,10 +19,10 @@
   },
   "version": "0.1.0",
   "devDependencies": {
-    "@prettier/plugin-ruby": "^1.5.5",
+    "@prettier/plugin-ruby": "^1.6.0",
     "husky": ">=6",
-    "prettier": "^2.3.0",
-    "prettier-plugin-erb": "^0.3.0",
+    "prettier": "^2.3.2",
+    "prettier-plugin-erb": "^0.4.0",
     "webpack-dev-server": "^3.11.2"
   },
   "prettier": {
