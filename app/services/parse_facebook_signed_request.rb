@@ -21,9 +21,7 @@ class ParseFacebookSignedRequest < ApplicationService
 
     expected_sig = OpenSSL::HMAC.digest("SHA256", @secret, payload)
 
-    if decoded_sig != expected_sig
-      raise WrongToken
-    end
+    raise WrongToken if decoded_sig != expected_sig
 
     data
   end
