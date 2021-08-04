@@ -14,7 +14,7 @@
     <%= link_to melanges_path, class: "nav-link" do %>
       <i class="fas fa-fw fa-chart-area"></i>
       <span>Wydarzenia</span>
-      <% end %>
+    <% end %>
   </li>
 
   <li class="nav-item">
@@ -30,19 +30,23 @@
     Listy
   </div>
 
-  <li class="nav-item">
-    <%= link_to "#", class: "nav-link" do %>
-      <i class="fas fa-fw fa-chart-area"></i>
-      <span>Produkt A</span>
-    <% end %>
-  </li>
+  <% if current_melange.product_categories.empty? %>
+    <li class="nav-item">
+      <%= link_to new_melange_product_category_path(current_melange), class: "nav-link" do %>
+        <i class="fas fa-fw fa-chart-area"></i>
+        <span>Dodaj kategorię</span>
+      <% end %>
+    </li>
+  <% end %>
 
-  <li class="nav-item">
-    <%= link_to "#", class: "nav-link" do %>
-      <i class="fas fa-fw fa-chart-area"></i>
-      <span>Produkt B</span>
-    <% end %>
-  </li>
+  <% current_melange.product_categories.each do |product_category| %>
+    <li class="nav-item">
+      <%= link_to product_category_path(product_category), class: "nav-link" do %>
+        <i class="fas fa-fw fa-chart-area"></i>
+        <span><%= product_category.name %></span>
+      <% end %>
+    </li>
+  <% end %>
 
   <hr class="sidebar-divider d-md-block">
 

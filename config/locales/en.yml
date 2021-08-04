@@ -11,6 +11,9 @@ en:
           moderator: Moderator
           guest: Guest
     model:
+      product_category:
+        one: Product Category
+        other: Product categories
       melange:
         one: Event
         other: Events
@@ -42,6 +45,10 @@ en:
       edit: Edit event
       update: Edit event
       basic_data: Basic data
+    product_categories:
+      new: Add product category
+      create: Add product category
+      for_event: Product type for event
 
   controllers:
     melanges:

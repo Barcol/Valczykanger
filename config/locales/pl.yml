@@ -11,6 +11,9 @@ pl:
           moderator: Pomocnik
           guest: Gość
     model:
+      product_category:
+        one: Typ produktu
+        other: Typu produktów
       melange:
         one: Wydarzenie
         few: Wydarzenia
@@ -46,6 +49,10 @@ pl:
       edit: Edytuj wydarzenie
       update: Edytuj wydarzenie
       basic_data: Podstawowe dane
+    product_categories:
+      new: Dodaj kategorie produktów
+      create: Dodaj kategorie produktów
+      for_event: Typ produktu dla wydarzenia
 
   controllers:
     melanges:
@@ -55,6 +62,13 @@ pl:
         ok: Wydarzenie zaktualizowane poprawnie.
       destroy:
         ok: Wydarzenie zostało permanentnie usunięte.
+    product_categories:
+      create:
+        ok: Dodano nowy typ produktów.
+      update:
+        ok: Zmieniono typ produktów.
+      destroy:
+        ok: Usunięto typ produktów.
 
   helpers:
     submit:
