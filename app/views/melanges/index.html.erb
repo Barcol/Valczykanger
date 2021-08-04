@@ -58,6 +58,13 @@
                           <%= t "activeview.buttons.delete" %>
                         <% end %>
                       <% end %>
+
+                      <% if can? :create, ProductCategory %>
+                        <%= link_to new_melange_product_category_path(melange), class: "dropdown-item" do %>
+                          <i class="fa fa-wine-bottle mr-5"></i>
+                          <%= t "activeview.product_categories.new" %>
+                        <% end %>
+                      <% end %>
                     </div>
                   </td>
                 </tr>
