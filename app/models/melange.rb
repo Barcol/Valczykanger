@@ -8,7 +8,6 @@ class Melange < ApplicationRecord
   validates :event_date, presence: true
 
   def create_organizer(user:)
-    participants <<
-      Participant.create!(melange: self, user: user, role: :organizer)
+    participants << Participant.create!(melange: self, user: user, role: :organizer)
   end
 end
