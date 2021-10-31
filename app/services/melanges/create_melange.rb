@@ -12,12 +12,10 @@ module Melanges
     end
 
     def create_melange
-      if @melange.valid?
-        @melange.create_organizer(user: @user)
-        @melange.save!
-      else
-        false
-      end
+      return false unless @melange.valid?
+
+      @melange.create_organizer(user: @user)
+      @melange.save!
     end
   end
 end
