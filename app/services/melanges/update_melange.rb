@@ -3,6 +3,7 @@ module Melanges
     def call
       @melange.assign_attributes(@melange_params)
       return false unless @melange.valid?
+
       @melange.save!
     end
 
